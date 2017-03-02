@@ -1,11 +1,26 @@
-# react-native-demo
+# React Native Demo
+
 A quick test driven React Native app.
 
 ## Install Prerequisites
 
-* `npm install -g appium`
 * `brew install carthage`
+
+## Setup the Environment
+
+* `bundle`
+* `npm install`
 
 ## Run Integration Tests
 
-* `rspec spec/hello_world_spec.rb`
+* Start the React Native packager.
+
+  `npm start`
+
+* Boot the Appium server.
+
+  `npm run appium`
+
+* Run Rspec.
+
+  `rspec`
