@@ -7,7 +7,7 @@ RSpec.configure do |config|
       versionNumber: '9.3',
       deviceName:    'iPhone 6s',
       newCommandTimeout: 9999,
-      app: '/Users/minifast/workspace/react-native-demo/ios/build/Build/Products/Debug-iphonesimulator/ReactNativeDemo.app',
+      app: File.join(File.dirname(__FILE__), '..', '..', 'ios', 'build', 'Build', 'Products', 'Debug-iphonesimulator', 'ReactNativeDemo.app'),
       automationName: 'XCUITest'
     }
 
