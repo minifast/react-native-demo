@@ -1,0 +1,4 @@
+ --compilers js:babel-register
+ --require react-native-mock/mock
+ --require spec/spec_helper.js
+ spec/**/*_spec.js
