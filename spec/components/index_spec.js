@@ -1,29 +1,35 @@
-import React from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
+import React, { Text } from 'react-native';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import Index from '../../index.ios';
 
 describe('<Index/>', () => {
   describe('render()', () => {
-    let result;
+    let wrapper;
 
     beforeEach(() => {
-      const renderer = ReactTestUtils.createRenderer();
-      renderer.render(<Index/>);
-      result = renderer.getRenderOutput();
+      wrapper = shallow(<Index/>);
     });
 
     it('has three children', () => {
-      expect(result.props.children.length).to.equal(3);
+      expect(wrapper.node.props.children.length).to.equal(3);
     });
 
     it('is a view component', () => {
-      expect(result.type.displayName).to.equal('View');
+      expect(wrapper.node.type.displayName).to.equal('View');
     });
 
     it('its children are text blocks', () => {
-      expect(result.props.children[0].type.displayName).to.equal('Text');
+      expect(wrapper.node.props.children[0].type.displayName).to.equal('Text');
+    });
+
+    it('is a view component with enzyme', () => {
+      expect(wrapper.length).to.equal(1);
+    });
+
+    it('welcomes us to react native', () => {
+      expect(wrapper.contains(<Text>Welcome to React Native!</Text>)).to.equal(true);
     });
   });
 });

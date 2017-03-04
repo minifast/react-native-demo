@@ -15,8 +15,8 @@
     "appium": "^1.6.3",
     "babel-preset-react-native": "1.9.1",
     "chai": "^3.5.0",
+    "enzyme": "^2.7.1",
     "mocha": "^3.2.0",
-    "react-addons-test-utils": "^15.4.2",
     "react-native-mock": "^0.3.1"
   },
   "jest": {
