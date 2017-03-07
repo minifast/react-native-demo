@@ -18,7 +18,7 @@ export default class ReactNativeDemo extends Component {
       <View style={styles.container}>
         <Text style={styles.welcome}>
           <Text>Welcome to React Native!</Text>
-          <Text>Woooooop</Text>
+          <Text>Hello, Ministry of Velocity!</Text>
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
