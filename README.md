@@ -6,11 +6,12 @@ A quick test driven React Native app.
 
 * Install XCode.
 * `brew install carthage`
+* `brew install yarn`
 
 ## Setup the Environment
 
 * `bundle`
-* `npm install`
+* `yarn`
 
 ## Run Integration Tests
 
@@ -20,11 +21,11 @@ A quick test driven React Native app.
 
 * Start the React Native packager.
 
-  `npm start`
+  `yarn start`
 
 * Boot the Appium server.
 
-  `npm run appium`
+  `yarn run appium`
 
 * Run Rspec.
 
@@ -32,10 +33,10 @@ A quick test driven React Native app.
 
 ## Run the Component Specs
 
-* All of the specs can be run via NPM.
+* All of the specs can be run via Yarn.
 
-  `npm test`
+  `yarn test`
 
 * Specific tests can be run with the grep option.
 
-  `npm test -- --grep "has three children"`
+  `yarn test -- --grep "has three children"`
