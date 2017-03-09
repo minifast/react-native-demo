@@ -13,19 +13,45 @@ import {
 } from 'react-native';
 
 export default class ReactNativeDemo extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {text: 'Waiting'}
+  }
+
+  componentDidMount() {
+    const that = this
+
+    fetch('http://localhost:3000/test.json').
+      then((response) => {
+        return response.json();
+      }).
+      then((json) => {
+        that.stateUpdater({ text: json.text});
+      }).
+      catch((error) => {
+        that.stateUpdater({ error: 'Error grabbing server data.' });
+      });
+  }
+
+  stateUpdater(new_state, callback) {
+    swizzled_callback = () => {
+      if(typeof(callback) === 'function' ) { callback(); }
+      if(typeof(this.props.afterSetState) === 'function' ) { this.props.afterSetState(); }
+    }
+    this.setState(new_state, swizzled_callback);
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          <Text>Welcome to React Native!</Text>
+          <Text>{this.state.text}</Text>
+        </Text>
+        <Text style={styles.instructions}>
           <Text>Hello, Ministry of Velocity!</Text>
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          <Text>{this.state.error}</Text>
         </Text>
       </View>
     );

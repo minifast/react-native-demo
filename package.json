@@ -19,6 +19,8 @@
     "enzyme": "^2.7.1",
     "jsdom": "^9.11.0",
     "mocha": "^3.2.0",
-    "react-native-mock-render": "^0.0.3"
+    "react-native-mock-render": "^0.0.3",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0"
   }
 }
